@@ -1,10 +1,16 @@
 @import "./variables.scss";
-header{
+@mixin flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 
+
+}
+header{
+@include flexCenter();
 background: lightblue;
-display: flex;
-justify-content: center;
-align-items: center;
+height: 100vh;
 }
 
 header button{
