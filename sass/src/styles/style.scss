@@ -1,5 +1,4 @@
-$primaryBtn:orange;
-
+@import "./variables.scss";
 header{
 
 background: lightblue;
@@ -17,4 +16,16 @@ padding-left: 30px;
 padding-right: 30px;
 
 
+
+}
+header{
+
+  p{
+
+    color:$primaryBtn;
+    &:hover{background-color: red;
+      
+      cursor: pointer;
+        }
+  }
 }

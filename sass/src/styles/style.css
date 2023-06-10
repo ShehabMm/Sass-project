@@ -21,4 +21,13 @@ header button {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+header p {
+  color: orange;
+}
+
+header p:hover {
+  background-color: red;
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
