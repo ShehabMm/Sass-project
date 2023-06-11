@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+    "noEmit": true // Do not compile the JS (or TS) files in this project on build
+
+  },
+  "include": [
+    "src",
+    "file.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}

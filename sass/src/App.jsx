@@ -1,26 +1,36 @@
-import './App.css'
-import './styles/style.css'
+import "./App.css";
+import "./styles/style.css";
+import { useState } from "react";
 
-const name="ali"
-const [state, setstate] = useState(true);
-const App=()=> {
 
+
+const App = () => {
+  const [counter, setcounter] = useState(0);
 
 
   return (
     <>
-    <header>
-    <p>shehab {true? "ss":"ff"}</p>
-    <button>submit</button>
+      <header>
+        <button>submit</button>
+      </header>
+      <button onClick={(eo) => {
+        eo.preventDefault()
+        setcounter(counter-1)
+      }}>-</button>
+      <h1>{counter}</h1>
+      <button onClick={() => {
+                setcounter(counter+1) 
 
+      }}>+</button>
 
-    </header>
-  <div className="info">
-<h1>Our contact info</h1>
-<p>This is our info</p>
-  </div>
+      <div className="info">
+        <h1>Our contact info</h1>
+        <p>This is our info</p>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default App
+
+
+export default App;

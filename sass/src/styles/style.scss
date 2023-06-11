@@ -1,38 +1,34 @@
 @import "./variables.scss";
-@mixin flexCenter($direction){
+@mixin flexCenter($direction) {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   flex-direction: $direction;
-
-
-
-}
-header{
-@include flexCenter(column);
-background: lightblue;
-}
-
-header button{
-background-color:$primaryBtn;
-border-radius:1500px;
-align-items: center;
-padding-bottom: 15px;
-padding-left: 30px;
-padding-right: 30px;
-
-
+  width: 100vw;
 
 }
-header{
 
-  p{
+header {
+  @include flexCenter(column);
+  background: lightblue;
+}
 
-    color:$primaryBtn;
-    &:hover{background-color: red;
-      
+header button {
+  background-color: $primaryBtn;
+  border-radius: 1500px;
+  align-items: center;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+header {
+  p {
+    color: $primaryBtn;
+    &:hover {
+      background-color: red;
+
       cursor: pointer;
-        }
+    }
   }
 }
