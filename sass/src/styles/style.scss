@@ -1,16 +1,17 @@
 @import "./variables.scss";
-@mixin flexCenter{
+@mixin flexCenter($direction){
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  height: 100vh;
+  flex-direction: $direction;
+
 
 
 }
 header{
-@include flexCenter();
+@include flexCenter(column);
 background: lightblue;
-height: 100vh;
 }
 
 header button{

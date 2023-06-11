@@ -1,11 +1,16 @@
 import './App.css'
 import './styles/style.css'
-function App() {
+
+const name="ali"
+const [state, setstate] = useState(true);
+const App=()=> {
+
+
 
   return (
     <>
     <header>
-    <p>shehab</p>
+    <p>shehab {true? "ss":"ff"}</p>
     <button>submit</button>
 
 
