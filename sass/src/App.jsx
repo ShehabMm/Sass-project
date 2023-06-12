@@ -1,36 +1,34 @@
-import "./App.css";
-import "./styles/style.css";
-import { useState } from "react";
+import './styles/new.css'
+// import axios from 'axios'
+//  const API_url = 'http://www.omdbapi.com?apikey=ae227408' 
+
+//  const getit = () => {
+//   axios.get('http://www.omdbapi.com?apikey=ae227408').then((res) => {
+//     console.log(res.json())
+//   }).catch( (err) => {
+//     console.log(err)
+
+//   })
+// }
+
+
+
+
 
 
 
 const App = () => {
-  const [counter, setcounter] = useState(0);
-
-
   return (
-    <>
-      <header>
-        <button>submit</button>
-      </header>
-      <button onClick={(eo) => {
-        eo.preventDefault()
-        setcounter(counter-1)
-      }}>-</button>
-      <h1>{counter}</h1>
-      <button onClick={() => {
-                setcounter(counter+1) 
-
-      }}>+</button>
-
-      <div className="info">
-        <h1>Our contact info</h1>
-        <p>This is our info</p>
-      </div>
-    </>
+    <div>
+      <head className="header">
+        <p>This ifffffffffffs me</p>
+      </head>
+      <main>
+      </main>
+      <footer>
+      </footer>
+    </div>
   );
-};
-
-
+}
 
 export default App;
