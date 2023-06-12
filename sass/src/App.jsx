@@ -19,15 +19,38 @@ import './styles/new.css'
 
 const App = () => {
   return (
-    <div>
-      <head className="header">
-        <p>This ifffffffffffs me</p>
-      </head>
+    <>
       <main>
+        <section className="one">
+          <button>Newest</button>
+          <button>Oldest</button>
+          <select>
+            <option>All Tasks</option>
+            <option>Done</option>
+            <option>Unfinished</option>
+
+
+          </select>
+        </section>
+
+
+
+
+
+        <section className="two">
+
+        </section>
+
+
+
+        <section className="three">
+
+        </section>
+
+
+
       </main>
-      <footer>
-      </footer>
-    </div>
+    </>
   );
 }
 
