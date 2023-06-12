@@ -22,8 +22,8 @@ const App = () => {
     <>
       <main>
         <section className="one">
-          <button>Newest</button>
-          <button>Oldest</button>
+          <button className='myButton'>Newest</button>
+          <button className='myButton'>Oldest</button>
           <select>
             <option>All Tasks</option>
             <option>Done</option>
@@ -38,6 +38,36 @@ const App = () => {
 
 
         <section className="two">
+          <article>
+            <h2>New Task</h2>
+            <ul>
+              <li>sub task 1</li>
+              <li> sub task 1</li>
+
+            </ul>
+            <p>a day ago</p>
+          </article>
+
+          <article>
+            <h2>New Task</h2>
+            <ul>
+              <li>sub task 1</li>
+              <li> sub task 1</li>
+
+            </ul>
+            <p>a day ago</p>
+          </article>
+
+          <article>
+            <h2>New Task</h2>
+            <ul>
+              <li>sub task 1</li>
+              <li> sub task 1</li>
+
+            </ul>
+            <p>a day ago</p>
+          </article>
+
 
         </section>
 
@@ -45,6 +75,9 @@ const App = () => {
 
         <section className="three">
 
+          <button>
+            Add a new Task
+          </button>
         </section>
 
 

@@ -1,6 +1,6 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   background-color: rgb(21, 13, 13);
   box-sizing: border-box;
   font-family: sans-serif;
@@ -8,18 +8,102 @@
   font-size: 16px;
 }
 
-main{
+main {
 
-margin-top:30vh;
-border:2px solid red;
-display:flex;
-justify-content: center;
-height:60vh;
+  margin-top: 30vh;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+
 
 }
-main .one{
 
-  border:2px solid red;
-  height: 20%;
+main .one {
 
+  height: 10%;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+
+  border: 1px solid #ffaa22;
+
+}
+
+main .one .myButton {
+  box-shadow: 0px 1px 0px 0px #fff6af;
+  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  background-color: #ffec64;
+  border-radius: 6px;
+  border: 1px solid #ffaa22;
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 40px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffee66;
+}
+
+main .one .myButton:hover {
+  background: linear-gradient(to bottom, #1c1b1b 5%, #71660f 100%);
+  background-color: #ffab23;
+  color: white;
+}
+
+main .one .myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+main .two {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  display: flex;
+  height: 30vh;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+main .two article ul li{
+
+  list-style:inside;
+  padding: 5px;
+}
+main .two article ul{
+margin-top: 10px;
+margin-bottom: 10px;
+
+}
+
+main .two article{
+
+  border: 1px solid rgb(245, 241, 241);
+  border-radius: 5px;
+  width: 50%;
+  height: 22vh;
+
+
+}
+
+main .two article h2{
+  text-align: center;
+  margin-top: 5px;
+}
+main .two article p{
+  text-align: right;
+}
+
+main .three{
+height: 5vh;
+width: 150px;
+border:2px solid red;
+display:block;
 }
