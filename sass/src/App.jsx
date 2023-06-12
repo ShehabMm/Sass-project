@@ -73,12 +73,12 @@ const App = () => {
 
 
 
-        <section className="three">
+        {/* <section className="three">
 
           <button>
             Add a new Task
           </button>
-        </section>
+        </section> */}
 
 
 
