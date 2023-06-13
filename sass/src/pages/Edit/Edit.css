@@ -1,13 +1,113 @@
 .edit-page {
   position: relative;
   text-align: center;
-  top:100px;
+  top: 100px;
 }
 
 .edit-page input {
 
   border: 1px solid white;
-  color:white;
+  color: white;
   font-size: 18px;
   text-align: center;
+}
+
+.main-component {
+  position: relative;
+  border: 1px solid rgb(209, 208, 208);
+  top: 150px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 200px;
+  border-radius: 5px;
+  padding:5px
+
+
+
+}
+
+.main-component .inside {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+.main-component .inside p {
+
+  font-size: 12px;
+}
+
+.main-component .inside input {
+  accent-color: teal;
+  margin-right: 10px;
+  position: relative;
+  top: 2px
+}
+
+
+.main-component ul .card .in{
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.main-component .card {
+margin-top: 50px;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 5px;
+list-style: none;
+
+  /* From https://css.glass */
+  background: rgba(95, 191, 115, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(95, 191, 115, 0.3);
+  transition: all 0.5s;
+}
+
+.main-component .card:hover{
+  box-shadow: 0 4px 30px rgba(50, 0, 0, 1.9);
+  border-left: 10px solid rgba(95, 191, 115, 0.3);
+
+
+}
+
+
+.main-component .bin{
+padding-top: 5px;
+padding-bottom: 5px;
+padding-right: 5px;
+font-size: 30px;
+transition: all 0.2s;
+color:rgba(13, 227, 209, 0.585);
+
+}
+
+.main-component .bin:hover{
+
+  font-size: 33px;
+cursor:pointer;
+
+}
+
+.final{
+position:relative;
+top: 200px;
+width: 150px;
+margin-left: auto;
+margin-right: auto;
+display: flex;
+flex-direction: column;
+gap: 20px;
+
+
+
+
 }
