@@ -1,0 +1,13 @@
+.edit-page {
+  position: relative;
+  text-align: center;
+  top:100px;
+}
+
+.edit-page input {
+
+  border: 1px solid white;
+  color:white;
+  font-size: 18px;
+  text-align: center;
+}
