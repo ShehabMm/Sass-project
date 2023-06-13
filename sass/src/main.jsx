@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Edit from "./pages/Edit/Edit";
-import popup from "./pages/popup/popup";
+import Popup from "./pages/popup/popup";
 
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/popup",
-    element: <popup/>,
+    element: <Popup/>,
     errorElement: <h1>Error sorry</h1>,
 
   },

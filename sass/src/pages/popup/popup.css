@@ -1,0 +1,47 @@
+form{
+
+display:flex;
+flex-direction: column;
+max-width: 300px;
+border:1px solid white;
+min-height: 300px;
+border-radius: 5px;
+padding:50px;
+justify-content: center;
+align-items: center;
+align-content: center;
+gap: 20px;
+position: fixed;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+top:200px;
+/* From https://css.glass */
+background: rgba(241, 132, 8, 0.71);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+form .close{
+
+position: absolute;
+top:0;
+right:5px;
+background-color: transparent;
+cursor: pointer;
+
+}
+
+form input{
+
+  width: 200px;
+}
+
+form button{
+
+width: 100px;
+
+}
