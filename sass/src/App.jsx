@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 
 const getit = async () => {
-  await axios.get('http://www.omdbapi.com?apikey=ae227408').then((res) => {
+  await axios.get('http://localhost:5000/api').then((res) => {
     console.log(res.json())
   }).catch((err) => {
     console.log(err)
@@ -26,7 +26,7 @@ const App = () => {
 
 
   useEffect(() => {
-
+    getit()
   }, []);
   return (
     <>
