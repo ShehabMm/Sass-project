@@ -1,19 +1,20 @@
 import "./styles/new.css";
 import { Link } from "react-router-dom";
 import Popup from "./pages/popup/popup"
-import { useState } from 'react';
+import axios from 'axios'
+import { useState, useEffect } from 'react';
 
-// import axios from 'axios'
-//  const API_url = 'http://www.omdbapi.com?apikey=ae227408'
 
-//  const getit = () => {
-//   axios.get('http://www.omdbapi.com?apikey=ae227408').then((res) => {
-//     console.log(res.json())
-//   }).catch( (err) => {
-//     console.log(err)
+const getit = async () => {
+  await axios.get('http://www.omdbapi.com?apikey=ae227408').then((res) => {
+    console.log(res.json())
+  }).catch((err) => {
+    console.log(err)
 
-//   })
-// }
+  })
+}
+
+
 
 
 const App = () => {
@@ -23,10 +24,14 @@ const App = () => {
     setmodel(false)
   }
 
+
+  useEffect(() => {
+
+  }, []);
   return (
     <>
       <main>
-      {model && <Popup data={alter}/>   }  
+        {model && <Popup data={alter} />}
         <section className="one">
           <button className="myButton">Newest</button>
           <button className="myButton">Oldest</button>
@@ -47,7 +52,7 @@ const App = () => {
               </ul>
               <p>a day ago</p>
             </Link>
-          </article>    
+          </article>
 
           <article>
             <h2>New Task</h2>
@@ -76,16 +81,16 @@ const App = () => {
             <p>a day ago</p>
           </article>
         </section>
-      
-        <section className="three">
-          <button  onClick={() => {
 
-setmodel(true)
-            
+        <section className="three">
+          <button onClick={() => {
+
+            setmodel(true)
+
           }}>Add a new task +</button>
         </section>
       </main>
-  
+
 
     </>
   );
