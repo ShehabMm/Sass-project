@@ -38,6 +38,7 @@ cursor: pointer;
 form input{
 
   width: 200px;
+  accent-color: red;
 }
 
 form button{

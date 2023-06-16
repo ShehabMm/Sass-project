@@ -5,12 +5,13 @@ const Schema = mongoose.Schema;
 const articleSchema = new Schema({
   title: String,
   details: String,
-});
- 
+})
+
  
 // Create a model based on that schema
 const Article = mongoose.model("Article", articleSchema);
  
+
  
 // export the model
 module.exports = Article; 

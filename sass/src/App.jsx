@@ -5,14 +5,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react';
 
 
-const getit = async () => {
-  await axios.get('http://localhost:5000/api').then((res) => {
-    console.log(res.json())
-  }).catch((err) => {
-    console.log(err)
 
-  })
-}
 
 
 
@@ -25,16 +18,31 @@ const App = () => {
   }
 
 
+  const getit = async () => {
+    const {data}= await axios.get('http://localhost:5000/api').then(() => {
+      console.log(data)
+      setnotes(data)
+      console.log(note)
+    }).catch((err) => {
+      console.log(err)
+    
+
+    })
+  }
+
   useEffect(() => {
     getit()
-  }, []);
+  } );
+  const [note, setnotes] = useState([]);
   return (
     <>
       <main>
         {model && <Popup data={alter} />}
+
         <section className="one">
           <button className="myButton">Newest</button>
           <button className="myButton">Oldest</button>
+          
           <select>
             <option>All Tasks</option>
             <option>Done</option>
