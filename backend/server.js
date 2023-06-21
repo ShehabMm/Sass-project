@@ -25,6 +25,27 @@ app.get("/api", async (req, res) => {
   }
 })
 
+app.post("/post", async (req, res) => {
+
+  try {
+
+    const article = await new Article(req.body)
+
+    Article.save()
+console.log(req.body)
+  } catch (error) {
+
+  }
+})
+
+
+
+
+
+
+
+
+
 
 
 
