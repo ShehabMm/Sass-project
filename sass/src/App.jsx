@@ -16,23 +16,21 @@ const App = () => {
   const alter = () => {
     setmodel(false)
   }
-
-
-  const getit = async () => {
-    const {data}= await axios.get('http://localhost:5000/api').then(() => {
-      console.log(data)
-      setnotes(data)
-      console.log(note)
-    }).catch((err) => {
-      console.log(err)
-    
-
-    })
-  }
+  
 
   useEffect(() => {
-    getit()
-  } );
+    
+    
+    axios.get('http://localhost:8080/api').then((response) => {
+      setnotes(response.data.data)
+      console.log(response.data.data
+        )
+    })
+    
+  
+  }, []);
+
+
   const [note, setnotes] = useState([]);
   return (
     <>
@@ -41,7 +39,8 @@ const App = () => {
 
         <section className="one">
           <button className="myButton">Newest</button>
-          <button className="myButton">Oldest</button>
+          <button onClick={() => {
+          }} className="myButton">Oldest</button>
           
           <select>
             <option>All Tasks</option>
@@ -50,45 +49,29 @@ const App = () => {
           </select>
         </section>
 
-        <section className="two">
-          <article>
-            <Link to={"/edit"}>
-              <h2>New Task</h2>
-              <ul>
-                <li>sub task 1</li>
-                <li> sub task 1</li>
-              </ul>
-              <p>a day ago</p>
-            </Link>
-          </article>
 
-          <article>
-            <h2>New Task</h2>
-            <ul>
-              <li>sub task 1</li>
-              <li> sub task 1</li>
-            </ul>
-            <p>a day ago</p>
-          </article>
+          {note.map((item) => {
+            return(
 
-          <article>
-            <h2>New Task</h2>
-            <ul>
-              <li>sub task 1</li>
-              <li> sub task 1</li>
-            </ul>
-            <p>a day ago</p>
-          </article>
+              <section key={item._id} className="two">
 
-          <article>
-            <h2>New Task</h2>
-            <ul>
-              <li>sub task 1</li>
-              <li> sub task 1</li>
-            </ul>
-            <p>a day ago</p>
-          </article>
-        </section>
+
+              <article>
+              <Link to={"/edit"}>
+                <h2>{item.title}</h2>
+                <ul>
+                  <li>{item.details}</li>
+                  <li> sub task 1</li>
+                </ul>
+                <p>a day ago</p>
+              </Link>
+            </article>
+  
+            </section>
+
+            )
+          })}
+
 
         <section className="three">
           <button onClick={() => {

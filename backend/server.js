@@ -12,26 +12,35 @@ app.get("/", (req, res) => {
   console.log("API is running ok");
 });
 
+app.get("/api", async (req, res) => {
+
+  try {
+
+    const ali = await Article.find({})
+
+    res.send({ data: ali })
+
+  } catch (error) {
+
+  }
+})
+
+
+
+
 mongoose.connect(
-    "mongodb://shehab:1234@ac-smhji2v-shard-00-00.kiiwcap.mongodb.net:27017,ac-smhji2v-shard-00-01.kiiwcap.mongodb.net:27017,ac-smhji2v-shard-00-02.kiiwcap.mongodb.net:27017/all_data?ssl=true&replicaSet=atlas-jilp6g-shard-0&authSource=admin&retryWrites=true&w=majority"
-  )
-  .then((result) => {
+  "mongodb://shehab:1234@ac-smhji2v-shard-00-00.kiiwcap.mongodb.net:27017,ac-smhji2v-shard-00-01.kiiwcap.mongodb.net:27017,ac-smhji2v-shard-00-02.kiiwcap.mongodb.net:27017/all_data?ssl=true&replicaSet=atlas-jilp6g-shard-0&authSource=admin&retryWrites=true&w=majority"
+)
+  .then(() => {
     console.log("Connected to mongodb successfully");
 
-    app.listen(5000, () => {
-      console.log(`server started on port 5000"`);
+    app.listen(8080, () => {
+      console.log(`server started on port 8080"`);
     });
   })
   .catch((err) => {
     console.log(err);
   });
 
-app. get("/api", async(req, res) => {
-  await  Article.find().then((result) => {
-
-console.log(result)
 
 
-    });
-  })
-  
