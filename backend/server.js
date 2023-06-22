@@ -2,10 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Article = require("./models/articleSchema");
 const cors = require("cors");
+const bodyParser = require ('body-parser')
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 app.get("/", (req, res) => {
   res.send("API is running");
@@ -25,17 +27,26 @@ app.get("/api", async (req, res) => {
   }
 })
 
-app.post("/post", async (req, res) => {
+app.post("/post",  async(req, res) => {
+  
+    const sami =  new Article(req.body)
 
-  try {
+    article.save().then((result) => {
+      console.log(req.body)
+      console.log(result)
 
-    const article = await new Article(req.body)
 
-    Article.save()
+    }).catch((err) => {
+      
+
+    })
+
+
+
 console.log(req.body)
-  } catch (error) {
+  
 
-  }
+
 })
 
 
