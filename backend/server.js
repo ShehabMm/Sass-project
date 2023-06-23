@@ -27,26 +27,16 @@ app.get("/api", async (req, res) => {
   }
 })
 
-app.post("/post",  async(req, res) => {
+
+app.post("/post", async (req, res) => {
   
-    const sami =  new Article(req.body)
-
-    article.save().then((result) => {
-      console.log(req.body)
-      console.log(result)
-
-
-    }).catch((err) => {
-      
-
-    })
-
-
-
-console.log(req.body)
-  
-
-
+try {
+  const product = await Article.create(req.body)
+res.status(200).json(product)
+} catch (err) {
+  console.log(err.message)
+  res.json({message:err.message})
+}
 })
 
 
