@@ -26,12 +26,7 @@ const App = () => {
       console.log(response.data.data)}
     )
 
-      axios.post('http://localhost:8080/post').then((response) => {
-        setnotes(response.data.data)
-        console.log(response.data.data
-        )
-
-      })
+    
 
 
     }, [])

@@ -2,25 +2,53 @@ import "./popup.css";
 import CloseIcon from "@mui/icons-material/Close";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import axios from 'axios'
 
 const Popup = ({ data }) => {
   Popup.propTypes = {
     data: PropTypes.func,
   };
 
+
+
+  
+    
+    
+
+
+
   const [array, setarray] = useState([]);
   const [subtask, setsubtask] = useState("");
   const [title, settitle] = useState("");
   const [disbutton, setdisbutton] = useState(false);
 
-  const addFun = () => {
-    array.push(subtask);
-    setsubtask("");
-  };
 
+
+
+const add = () => {
+
+  axios.post('http://localhost:8080/post', {
+      title:title,
+      details:subtask    
+      }).then((res) => {
+        console.log(res.data)
+      }).catch((err)=>{
+
+console.log(err)
+
+      })
+  
+}
+
+  
+
+const addFun = () => {
+  array.push(subtask);
+  
+};
   return (
     <>
-      <form method="POST"  action="">
+      <form method="POST"  action="http://localhost:8080/post">
         <CloseIcon
           className="close"
           onClick={() => {
@@ -34,6 +62,8 @@ const Popup = ({ data }) => {
           }}
           type="text"
           placeholder="title"
+          name="title"
+        
         />
         <input
           onChange={(eo) => {
@@ -42,7 +72,7 @@ const Popup = ({ data }) => {
           }}
           type="text"
           placeholder="details"
-          value={subtask}
+          name="details"
         />
 
         <button
@@ -59,6 +89,8 @@ const Popup = ({ data }) => {
           <button
             onClick={(eo) => {
               eo.preventDefault();
+              setarray([])
+              add()
             }}
           >
             Submit
@@ -67,7 +99,7 @@ const Popup = ({ data }) => {
 
         {array.map((item) => {
           return (
-            <ul key={item}>
+            <ul key={item._id}>
               <li>{item}</li>
             </ul>
           );
