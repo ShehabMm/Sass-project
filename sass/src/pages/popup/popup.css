@@ -46,3 +46,29 @@ form button{
 width: 100px;
 
 }
+
+form .loading{
+color:red;
+display: flex;
+margin-right: auto;
+margin-left: auto;
+}
+
+form .task{
+background-color: whitesmoke;
+color:black;
+padding: 5px;
+border-radius: 5px;
+width: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+justify-content: space-around;
+transition: all 0.9s ease-in-out;
+}
+
+form .check{
+color:aquamarine;
+background-color: aqua;
+font-size:16px;
+}

@@ -90,8 +90,8 @@ main .two article {
 
   border: 1px solid rgb(245, 241, 241);
   border-radius: 5px;
-  width: 100%;
-  height: 22vh;
+  width: 60%;
+  height: 100%;
   transition: all 0.3s;
 
 }
@@ -103,7 +103,9 @@ main .two article h2 {
 
 main .two article p {
   text-align: right;
-}
+  text-decoration: none !important;
+  
+    }
 
 main .two article:hover {
   border-left: 8px solid aliceblue;

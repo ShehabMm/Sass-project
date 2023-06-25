@@ -1,54 +1,55 @@
 import "./popup.css";
-import CloseIcon from "@mui/icons-material/Close";
 import PropTypes from "prop-types";
-import { useState } from "react";
-import axios from 'axios'
-
+import { useRef, useState } from "react";
+import axios from "axios";
+import ReactLoading from "react-loading";
+import CloseIcon from "@mui/icons-material/Close";
+import CheckIcon from "@mui/icons-material/Check";
 const Popup = ({ data }) => {
   Popup.propTypes = {
     data: PropTypes.func,
   };
 
-
-
-  
-    
-    
-
-
+  const addFun = () => {
+    array.push(subtask);
+    setsubtask("");
+  };
 
   const [array, setarray] = useState([]);
   const [subtask, setsubtask] = useState("");
   const [title, settitle] = useState("");
   const [disbutton, setdisbutton] = useState(false);
+  const [showloading, setshowloading] = useState(true);
+  const [showtask, setshowtask] = useState(false);
 
-
-
-
-const add = () => {
-
-  axios.post('http://localhost:8080/post', {
-      title:title,
-      details:subtask    
-      }).then((res) => {
-        console.log(res.data)
-      }).catch((err)=>{
-
-console.log(err)
-
+  const add = () => {
+    axios
+      .post("http://localhost:8080/post", {
+        title: title,
+        details: array,
       })
-  
-}
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-  
+  const ref = useRef(null);
+  const def = useRef(null);
+  const onClear = () => {
+    ref.current.value = "";
+    def.current.value = "";
+  };
 
-const addFun = () => {
-  array.push(subtask);
-  
-};
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <>
-      <form method="POST"  action="http://localhost:8080/post">
+      <form method="POST" action="http://localhost:8080/post">
         <CloseIcon
           className="close"
           onClick={() => {
@@ -60,16 +61,17 @@ const addFun = () => {
           onChange={(eo) => {
             settitle(eo.target.value);
           }}
+          ref={def}
           type="text"
           placeholder="title"
           name="title"
-        
         />
         <input
           onChange={(eo) => {
             setsubtask(eo.target.value);
             console.log(subtask);
           }}
+          ref={ref}
           type="text"
           placeholder="details"
           name="details"
@@ -78,8 +80,10 @@ const addFun = () => {
         <button
           onClick={(eo) => {
             eo.preventDefault();
-            addFun();
+
             setdisbutton(true);
+            addFun();
+            onClear();
           }}
         >
           Add
@@ -89,13 +93,43 @@ const addFun = () => {
           <button
             onClick={(eo) => {
               eo.preventDefault();
-              setarray([])
-              add()
+              add();
+              onClear();
+              setarray([]);
+              setshowloading(false);
+              setTimeout(() => {
+                setshowloading(true);
+                setshowtask(true);
+              }, 1000);
+
+              setTimeout(() => {
+                data();
+              }, 3000);
+
+              setTimeout(() => {
+                refreshPage();
+              }, 3000);
+
             }}
           >
-            Submit
+            {showloading ? (
+              "submit"
+            ) : (
+              <ReactLoading
+                type={"spin"}
+                color={"white"}
+                height={20}
+                width={20}
+                className="loading"
+              />
+            )}
           </button>
         )}
+
+        <p style={{ opacity: showtask ? 0.9 : 0 }} className="task">
+          Task added successfully
+          <CheckIcon className="check" />
+        </p>
 
         {array.map((item) => {
           return (
