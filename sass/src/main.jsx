@@ -14,7 +14,7 @@ const router = createBrowserRouter([
 
   },
   {
-    path: "/edit",
+    path: "/edit/:id",
     element: <Edit/>,
     errorElement: <h1>Error sorry</h1>,
 

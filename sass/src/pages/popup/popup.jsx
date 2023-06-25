@@ -11,9 +11,17 @@ const Popup = ({ data }) => {
   };
 
   const addFun = () => {
-    array.push(subtask);
-    setsubtask("");
-  };
+if (!array.includes(subtask)) {
+  
+  array.push(subtask);
+  setsubtask("");
+}
+
+}
+
+
+
+
 
   const [array, setarray] = useState([]);
   const [subtask, setsubtask] = useState("");

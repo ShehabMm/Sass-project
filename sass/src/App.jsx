@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import Popup from "./pages/popup/popup";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
   const [model, setmodel] = useState(false);
+  const navigate = useNavigate();
 
   const alter = () => {
     setmodel(false);
@@ -40,12 +42,24 @@ const App = () => {
         {note.map((item) => {
           return (
             <section key={item._id} className="two">
-              <article>
+              <article onClick={ () => {
+                navigate(`/edit/ ${  item._id }`)
+                Location. href = "/edit"
+              }
+                            }>
                 <Link to={"/edit"}>
                   <h2>{item.title}</h2>
-                  <ul>
-                    <li>{item.details}</li>
-                  </ul>
+
+                  {item.details.map((item, index) => {
+                    if (index < 2) {
+                      return (
+                        <ul key={item._id}>
+                          <li>{item}</li>
+                        </ul>
+                      );
+                    }
+                  })}
+
                   <p>a day ago</p>
                 </Link>
               </article>
@@ -63,8 +77,6 @@ const App = () => {
           </button>
         </section>
       </main>
-
-    
     </>
   );
 };

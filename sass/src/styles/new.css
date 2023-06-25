@@ -93,6 +93,8 @@ main .two article {
   width: 60%;
   height: 100%;
   transition: all 0.3s;
+  position:relative;
+
 
 }
 
@@ -102,9 +104,9 @@ main .two article h2 {
 }
 
 main .two article p {
-  text-align: right;
-  text-decoration: none !important;
-  
+  position:absolute;
+  right:20px;
+  bottom:10px;
     }
 
 main .two article:hover {
