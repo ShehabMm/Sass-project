@@ -1,12 +1,58 @@
 import "./Edit.css";
 import EditIcon from "@mui/icons-material/Edit";
-
 import DeleteIcon from "@mui/icons-material/Delete";
+import {  useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+
+
 const Edit = () => {
+  let  {id} = useParams();
+
+
+
+  console.log( (id))
+  
+
+
+  useEffect(() => {
+
+    try {
+      
+     axios.get(`http://localhost:8080/edit/${id}`).then((response) => {
+        setnotes(response.data.data);
+        console.log(response.data.data);
+        console.log({response})
+      });
+  
+
+    } catch (error) {
+      console.log({error})
+
+    }
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const [note, setnotes] = useState({});
+
   return (
     <>
       <div className="edit-page">
-        <input type="text" value={"Write here"}></input>
+        <input type="text" defaultValue={"Write here"}></input>
         <EditIcon sx={{ fontSize: "15px", cursor: "pointer" }} />
       </div>
 

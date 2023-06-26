@@ -90,7 +90,7 @@ main .two article {
 
   border: 1px solid rgb(245, 241, 241);
   border-radius: 5px;
-  width: 60%;
+  width: 40%;
   height: 100%;
   transition: all 0.3s;
   position:relative;

@@ -5,6 +5,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+
+
 const App = () => {
   const [model, setmodel] = useState(false);
   const navigate = useNavigate();
@@ -21,6 +23,11 @@ const App = () => {
   }, []);
 
   const [note, setnotes] = useState([]);
+
+
+
+
+
   return (
     <>
       <main>
@@ -42,9 +49,8 @@ const App = () => {
         {note.map((item) => {
           return (
             <section key={item._id} className="two">
-              <article onClick={ () => {
-                navigate(`/edit/ ${  item._id }`)
-                Location. href = "/edit"
+              <article  onClick={ () => {
+                navigate(`/edit/ ${item._id }`)
               }
                             }>
                 <Link to={"/edit"}>
@@ -53,8 +59,8 @@ const App = () => {
                   {item.details.map((item, index) => {
                     if (index < 2) {
                       return (
-                        <ul key={item._id}>
-                          <li>{item}</li>
+                        <ul key={item.index}>
+                          <li >{item}</li>
                         </ul>
                       );
                     }
