@@ -28,13 +28,14 @@ app.get("/api", async (req, res) => {
 })
 
 
-app.get("/edit/:id", async (req, res) => {
+app.get("/api/:id", async (req, res) => {
 
   try {
 
     const ali = await Article.findById(req.params.id)
 
     res.send({ data: ali })
+    res.render({objarticle:ali})
 
   } catch (error) {
 

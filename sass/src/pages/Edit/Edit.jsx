@@ -1,53 +1,41 @@
 import "./Edit.css";
+
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import {  useParams } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
-
+import { useParams } from 'react-router-dom';
 
 
 const Edit = () => {
-  let  {id} = useParams();
 
-
+  const {id}  = useParams();
 
   console.log( (id))
-  
+
+
+
+
+
 
 
   useEffect(() => {
 
-    try {
-      
-     axios.get(`http://localhost:8080/edit/${id}`).then((response) => {
-        setnotes(response.data.data);
-        console.log(response.data.data);
-        console.log({response})
-      });
-  
+    axios.get(`http://localhost:8080/api/${id}`).then(response => {
 
-    } catch (error) {
-      console.log({error})
+      console.log("response.data");
 
-    }
-  }, []);
+      console.log(response.data);
 
+    }).catch((err) => {
+
+      console.log(err)
+
+    });
+
+  }, [id]);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-const [note, setnotes] = useState({});
 
   return (
     <>
@@ -68,7 +56,7 @@ const [note, setnotes] = useState({});
           <ul>
             <li className="card">
               <div className="in">
-                <p>subtask</p>
+                <p>ss</p>
                 <DeleteIcon className="bin" />
               </div>
             </li>
@@ -80,7 +68,7 @@ const [note, setnotes] = useState({});
             <li className="card">
               <div className="in">
                 <p>subtask</p>
-                <DeleteIcon   color='info' className="bin" />
+                <DeleteIcon color='info' className="bin" />
               </div>
             </li>
           </ul>
