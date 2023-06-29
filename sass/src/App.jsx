@@ -1,11 +1,8 @@
 import "./styles/new.css";
-import { Link } from "react-router-dom";
 import Popup from "./pages/popup/popup";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-
 
 const App = () => {
   const [model, setmodel] = useState(false);
@@ -24,10 +21,6 @@ const App = () => {
 
   const [note, setnotes] = useState([]);
 
-
-
-
-
   return (
     <>
       <main>
@@ -35,7 +28,7 @@ const App = () => {
 
         <section className="one">
           <button className="myButton">Newest</button>
-          <button onClick={() => {}} className="myButton">
+          <button onClick={() => { }} className="myButton">
             Oldest
           </button>
 
@@ -49,25 +42,28 @@ const App = () => {
         {note.map((item) => {
           return (
             <section key={item._id} className="two">
-              <article  onClick={ () => {
-                navigate(`/edit/ ${item._id }`)
-              }
-                            }>
-                <Link to={"/edit"}>
+              <article
+                onClick={() => {
+                  navigate(`/edit/${item._id}`);
+                }}
+              >
+                <div key={item}>
                   <h2>{item.title}</h2>
 
                   {item.details.map((item, index) => {
                     if (index < 2) {
                       return (
-                        <ul key={item.index}>
-                          <li >{item}</li>
-                        </ul>
+                        <div key={item.index}>
+                          <ul>
+                            <li>{item}</li>
+                          </ul>
+                        </div>
                       );
                     }
                   })}
 
                   <p>a day ago</p>
-                </Link>
+                </div>
               </article>
             </section>
           );

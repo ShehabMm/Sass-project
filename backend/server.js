@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Article = require("./models/articleSchema");
 const cors = require("cors");
-const bodyParser = require ('body-parser')
+const bodyParser = require('body-parser')
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -28,15 +28,13 @@ app.get("/api", async (req, res) => {
 })
 
 
-app.get("/api/:id", async (req, res) => {
+app.get('/api/:id', async (req, res) => {
 
   try {
 
-    const ali = await Article.findById(req.params.id)
+    const ta = await Article.findById(req.params.id)
 
-    res.send({ data: ali })
-    res.render({objarticle:ali})
-
+    res.send({ data: ta })
   } catch (error) {
 
   }
@@ -48,14 +46,14 @@ app.get("/api/:id", async (req, res) => {
 
 
 app.post("/post", async (req, res) => {
-  
-try {
-  const product =  await Article.create(req.body)
-res.status(200).json(product)
-} catch (err) {
-  console.log(err.message)
-  res.json({message:err.message})
-}
+
+  try {
+    const product = await Article.create(req.body)
+    res.status(200).json(product)
+  } catch (err) {
+    console.log(err.message)
+    res.json({ message: err.message })
+  }
 })
 
 
