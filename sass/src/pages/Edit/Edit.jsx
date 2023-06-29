@@ -27,8 +27,8 @@ useEffect(() => {
   
     axios.get(`http://localhost:8080/api/${id}`).then((res) => {
     
-    console.log(res.data.data);
-    setposts(res.data.data);
+    console.log(res.data.data.details);
+    setposts(res.data.data.details);
   
 
 
@@ -83,36 +83,27 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* {posts.details.map((item) => {
-          console.log(posts)
-          return (
-            <div key={Math.random}>
-              <ul >
-                <li className="card">
-                  <div className="in">
-                    <p>{item}</p>
-                    <DeleteIcon className="bin" />
-                  </div>
-                </li>
-              </ul>
-            </div>
-          )
-        })} */}
+       {posts.map((item) => {
+          console.log(item)
+
+return(                    
+
+  <div key={item}>
+  <ul >
+    <li className="card">
+      <div className="in">
+        <p>{item}</p>
+        <DeleteIcon className="bin" />
+      </div>
+    </li>
+  </ul>
+</div>
+)
 
 
+        })}
 
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
       </section>
