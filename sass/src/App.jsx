@@ -62,7 +62,7 @@ const App = () => {
                     }
                   })}
 
-                  <p>a day ago</p>
+                  <p>Show more..</p>
                 </div>
               </article>
             </section>
