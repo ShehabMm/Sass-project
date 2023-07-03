@@ -5,13 +5,28 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const App = () => {
-
   const [model, setmodel] = useState(false);
   const navigate = useNavigate();
 
   const alter = () => {
     setmodel(false);
   };
+
+  const sort = () => {
+    axios.get("http://localhost:8080/sort").then((res) => {
+      setnotes(res.data.data);
+    });
+  };
+
+  const old = () => {
+    axios.get("http://localhost:8080/sortOld").then((res) => {
+      setnotes(res.data.data);
+    });
+  };
+
+
+
+
 
   useEffect(() => {
     axios.get("http://localhost:8080/api").then((response) => {
@@ -22,25 +37,39 @@ const App = () => {
 
   const [note, setnotes] = useState([]);
 
-
-
-
   return (
     <>
       <main>
         {model && <Popup data={alter} />}
 
         <section className="one">
-          <button className="myButton">Newest</button>
-          <button onClick={() => { }} className="myButton">
+
+
+        <button
+            onClick={() => {
+              setmodel(true);
+
+            }}
+            className="myButton"
+          >
+            Add a new Task
+          </button>
+
+          <button
+            onClick={() => {
+              sort();
+            }}
+            className="myButton"
+          >
+            Newest
+          </button>
+          <button onClick={() => {
+old()
+
+          }} className="myButton">
             Oldest
           </button>
 
-          <select>
-            <option>All Tasks</option>
-            <option>Done</option>
-            <option>Unfinished</option>
-          </select>
         </section>
 
         {note.map((item) => {

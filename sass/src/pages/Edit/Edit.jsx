@@ -1,5 +1,4 @@
 import "./Edit.css";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -70,7 +69,7 @@ const Edit = () => {
           }}
           style={{ marginLeft: "15px", cursor: "pointer" }}
         >
-          {dis === true ? "Update" : null}
+          {dis === true ? "Change Title" : null}
         </button>
 
         {dis === false && (
@@ -93,14 +92,6 @@ const Edit = () => {
         <div className="inside">
           <p>Create an hour ago</p>
           <div>
-            <input
-              type="checkbox"
-              id="checkbox"
-              onChange={() => {
-                console.log(posts);
-              }}
-            />
-            <label htmlFor="checkbox">Completed</label>
           </div>
         </div>
 
@@ -113,12 +104,6 @@ const Edit = () => {
                 <li className="card">
                   <div className="in">
                     <p>{item}</p>
-                    <DeleteIcon
-                      onClick={(eo) => {
-                        del(details[eo]);
-                      }}
-                      className="bin"
-                    />
                   </div>
                 </li>
               </ul>
@@ -136,6 +121,14 @@ const Edit = () => {
         >
           Delete task
         </button>
+        <button
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Home
+        </button>
+
       </section>
     </>
   );

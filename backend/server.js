@@ -27,6 +27,40 @@ app.get("/api", async (req, res) => {
   }
 })
 
+app.get("/sort", async (req, res) => {
+
+  try {
+
+    const ali = await Article.find({}).sort({_id:-1})
+
+    res.send({ data: ali })
+
+  } catch (error) {
+
+  }
+})
+
+
+
+
+app.get("/sortOld", async (req, res) => {
+
+  try {
+
+    const ali = await Article.find({}).sort({_id:1})
+
+    res.send({ data: ali })
+
+  } catch (error) {
+
+  }
+})
+
+
+
+
+
+
 
 app.get('/api/:id', async (req, res) => {
 
