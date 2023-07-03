@@ -56,6 +56,7 @@ const Edit = () => {
         <input
           onChange={(eo) => {
             setinputValue(eo.target.value);
+            console.log(details)
           }}
           type="text"
           defaultValue={postsTitle}
