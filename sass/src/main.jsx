@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Edit from "./pages/Edit/Edit";
 import Popup from "./pages/popup/popup";
+import Head from "./pages/header/head";
 
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
     errorElement: <h1>Error sorry</h1>,
 
   },
+
+  {
+    path: "/header",
+    element: <Head/>,
+    errorElement: <h1>Error sorry</h1>,
+
+  },
+
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const App = () => {
+
   const [model, setmodel] = useState(false);
   const navigate = useNavigate();
 
@@ -20,6 +21,9 @@ const App = () => {
   }, []);
 
   const [note, setnotes] = useState([]);
+
+
+
 
   return (
     <>
@@ -61,7 +65,6 @@ const App = () => {
                       );
                     }
                   })}
-
                   <p>Show more..</p>
                 </div>
               </article>

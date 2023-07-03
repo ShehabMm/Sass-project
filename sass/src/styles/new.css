@@ -115,20 +115,42 @@ cursor: pointer;
 }
 
 
-@media (max-width:600px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1000px) {
+
+  main .two article{
+width: 100%;
+
+
+  }
 
   main .two article h2 {
-    font-size: 15px;
+    font-size: 20px;
 
   }
 
   main .two article p {
-    font-size: 15px;
+    font-size: 20px;
 
   }
 
   main .two article ul li {
-    font-size: 10px;
+    font-size: 20px;
 
   }
 
@@ -136,6 +158,21 @@ cursor: pointer;
 flex-direction: column; 
 width: 60%; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 main .three button {
@@ -149,4 +186,38 @@ main .three button {
   border-bottom-left-radius: 20px;
   margin-top: 200px;
 
+}
+
+
+
+
+
+
+
+@media (max-width:500px) {
+
+  main .two article{
+width: 80vw;
+  }
+
+  main .two article h2 {
+    font-size: 15px;
+
+  }
+
+  main .two article p {
+    font-size: 10px;
+
+  }
+
+  main .two article ul li {
+    font-size: 20px;
+
+  }
+
+  main .one {
+flex-direction: column; 
+justify-content: center;
+align-items: center;
+width: 60%; }
 }
