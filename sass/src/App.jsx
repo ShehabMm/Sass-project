@@ -11,15 +11,15 @@ const App = () => {
   const alter = () => {
     setmodel(false);
   };
-
+//http://localhost:8080
   const sort = () => {
-    axios.get("http://localhost:8080/sort").then((res) => {
+    axios.get("/sort").then((res) => {
       setnotes(res.data.data);
     });
   };
 
   const old = () => {
-    axios.get("http://localhost:8080/sortOld").then((res) => {
+    axios.get("/sortOld").then((res) => {
       setnotes(res.data.data);
     });
   };
@@ -29,7 +29,7 @@ const App = () => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api").then((response) => {
+    axios.get("/api").then((response) => {
       setnotes(response.data.data);
       console.log(response.data.data);
     });

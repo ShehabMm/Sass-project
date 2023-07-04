@@ -8,6 +8,26 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//serving the frontend
+
+
+app.use(express.static(path.join(__dirname, "../sass/dist")));
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "../sass/dist/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
+});
+
+
+
+
+
+
+
+
 
 app.get("/", (req, res) => {
   res.send("API is running");
