@@ -6,6 +6,7 @@ import ReactLoading from "react-loading";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckIcon from "@mui/icons-material/Check";
 const Popup = ({ data }) => {
+  
   // @ts-ignore
   Popup.propTypes = {
     data: PropTypes.func,
@@ -53,8 +54,7 @@ if (!array.includes(subtask)) {
   };
 
   function refreshPage() {
-    // @ts-ignore
-    window.location.reload(false);
+    window.location.reload();
   }
 
   return (

@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Edit from "./pages/Edit/Edit";
 import Popup from "./pages/popup/popup";
-import Head from "./pages/header/head";
-
+import Head from './pages/head/head'
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -20,23 +19,26 @@ const router = createBrowserRouter([
   },
   {
     path: "/edit/:id",
-    element: <Edit />,
+    element: <Edit/>,
     errorElement: <h1>Error sorry</h1>,
 
   },
   {
     path: "/popup",
-    element: <Popup/>,
+    element: <Popup data={function alter() {
+      
+    }}/>,
     errorElement: <h1>Error sorry</h1>,
 
   },
-
   {
-    path: "/header",
-    element: <Head/>,
+    path: "/head",
+    element: <Head />,
     errorElement: <h1>Error sorry</h1>,
 
   },
+
+  
 
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

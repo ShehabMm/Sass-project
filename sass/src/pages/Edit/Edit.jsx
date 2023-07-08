@@ -12,7 +12,7 @@ const Edit = () => {
 //http://localhost:8080
   const put = async () => {
     await axios
-      .put(`/api/${id}`, { title: inputValue })
+      .put(`http://localhost:8080/api/${id}`, { title: inputValue })
       .then((res) => {
         console.log(res.data.data.title);
         console.log("hhhh");
@@ -24,7 +24,7 @@ const Edit = () => {
 
   const del = async () => {
     await axios
-      .delete(`/api/${id}`)
+      .delete(`http://localhost:8080/api/${id}`)
       .then((res) => {
         console.log(res.data.data.details);
         setdetails(res.data.data.details);
@@ -35,7 +35,7 @@ const Edit = () => {
   };
 
   useEffect(() => {
-    axios.get(`/api/${id}`).then((res) => {
+    axios.get(`http://localhost:8080/api/${id}`).then((res) => {
       setposts(res.data.data.details);
       setpostsTitle(res.data.data.title);
     });
