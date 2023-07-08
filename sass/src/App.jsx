@@ -13,13 +13,13 @@ const App = () => {
   };
 //http://localhost:8080
   const sort = () => {
-    axios.get("http://localhost:8080/sort").then((res) => {
+    axios.get("https://mongo-project-4wtk.onrender.com/sort").then((res) => {
       setnotes(res.data.data);
     });
   };
 
   const old = () => {
-    axios.get("http://localhost:8080/sortOld").then((res) => {
+    axios.get("https://mongo-project-4wtk.onrender.com/sortOld").then((res) => {
       setnotes(res.data.data);
     });
   };
@@ -29,7 +29,7 @@ const App = () => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api").then((response) => {
+    axios.get("https://mongo-project-4wtk.onrender.com/api").then((response) => {
       setnotes(response.data.data);
       console.log(response.data.data);
     });

@@ -10,9 +10,24 @@ const Edit = () => {
   console.log(id);
   const navigate = useNavigate();
 //http://localhost:8080
+
+
+useEffect(() => {
+  axios.get(`https://mongo-project-4wtk.onrender.com/api/${id}`).then((res) => {
+    setposts(res.data.data.details);
+    setpostsTitle(res.data.data.title);
+  });
+}, [id]);
+
+
+
+
+
+
+
   const put = async () => {
     await axios
-      .put(`http://localhost:8080/api/${id}`, { title: inputValue })
+      .put(`https://mongo-project-4wtk.onrender.com/api/${id}`, { title: inputValue })
       .then((res) => {
         console.log(res.data.data.title);
         console.log("hhhh");
@@ -24,7 +39,7 @@ const Edit = () => {
 
   const del = async () => {
     await axios
-      .delete(`http://localhost:8080/api/${id}`)
+      .delete(`https://mongo-project-4wtk.onrender.com/api/${id}`)
       .then((res) => {
         console.log(res.data.data.details);
         setdetails(res.data.data.details);
@@ -34,12 +49,7 @@ const Edit = () => {
       });
   };
 
-  useEffect(() => {
-    axios.get(`http://localhost:8080/api/${id}`).then((res) => {
-      setposts(res.data.data.details);
-      setpostsTitle(res.data.data.title);
-    });
-  }, [id]);
+  
 
   const [posts, setposts] = useState([]);
   const [postsTitle, setpostsTitle] = useState("");

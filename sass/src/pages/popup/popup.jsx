@@ -34,7 +34,7 @@ if (!array.includes(subtask)) {
 
   const add = () => {
     axios
-      .post("http://localhost:8080/post", {
+      .post("https://mongo-project-4wtk.onrender.com/post", {
         title: title,
         details: array,
       })
@@ -59,7 +59,7 @@ if (!array.includes(subtask)) {
 
   return (
     <>
-      <form method="POST" action="http://localhost:8080/post">
+      <form method="POST" action="https://mongo-project-4wtk.onrender.com/post">
         <CloseIcon
           className="close"
           onClick={() => {

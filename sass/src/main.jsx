@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Edit from "./pages/Edit/Edit";
 import Popup from "./pages/popup/popup";
-import Head from './pages/head/head'
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -31,13 +30,7 @@ const router = createBrowserRouter([
     errorElement: <h1>Error sorry</h1>,
 
   },
-  {
-    path: "/head",
-    element: <Head />,
-    errorElement: <h1>Error sorry</h1>,
-
-  },
-
+  
   
 
 ]);
