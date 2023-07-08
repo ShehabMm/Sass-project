@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Article = require("./models/articleSchema");
 const cors = require("cors");
 const bodyParser = require('body-parser')
+require('dotenv').config()
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -34,9 +35,7 @@ app.get("/", (req, res) => {
   console.log("API is running ok");
 });
 
-mongoose.connect(
-  "mongodb://shehab:1234@ac-smhji2v-shard-00-00.kiiwcap.mongodb.net:27017,ac-smhji2v-shard-00-01.kiiwcap.mongodb.net:27017,ac-smhji2v-shard-00-02.kiiwcap.mongodb.net:27017/all_data?ssl=true&replicaSet=atlas-jilp6g-shard-0&authSource=admin&retryWrites=true&w=majority"
-)
+mongoose.connect(process.env.MONGO_URL)
   .then(() => {
     console.log("Connected to mongodb successfully");
 
